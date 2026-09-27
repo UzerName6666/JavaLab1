@@ -6,13 +6,13 @@ public class Laba1 {
         return x > 0;
     }
     public boolean isDivisor(int a, int b){
-        return ((int)(a / b)) == 0 || ((int)(b / a)) == 0; 
+        return ((a % b) == 0) || ((b % a) == 0); 
     }
     public boolean isEqual(int a, int b, int c){
         return (a == b) && (a == c);
     }
     public int LastNumSum(int a, int b){
-        return a % 10 + b % 10;
+        return (a % 10) + (b % 10);
     }
 
     public double saveDiv(int x, int y){
@@ -79,7 +79,7 @@ public class Laba1 {
 
     public int pow(int x, int y){
         int powNum = 1;
-        if(x < 0){
+        if(y < 0){
             return 0;
         }
         for(int i = 0; i < y; i++){
@@ -105,6 +105,9 @@ public class Laba1 {
     }
 
     public void square(int x){
+        if(x < 0){
+            return;
+        }
         System.out.print(("*".repeat(x) + '\n').repeat(x));
     }
 
@@ -139,6 +142,9 @@ public class Laba1 {
     }
 
     public int[] add(int[] arr, int[] ins, int pos){
+        if(pos < 0){
+            pos += arr.length;
+        }
         int[] newArr = new int[arr.length + ins.length];
         System.arraycopy(arr, 0, newArr, 0, pos);
         System.arraycopy(ins, 0, newArr, pos, ins.length);

@@ -185,6 +185,10 @@ class Main {
 					arr2 = in.inputIntArray();
 					System.out.print("pos =  ");
 					num1 = in.inputInt();
+					while(-arr1.length > num1 || num1 >= arr1.length){
+						System.out.print("Введите число от " + (-arr1.length) + " до " + (arr1.length - 1) + ": ");
+						num1 = in.inputInt();
+					}
 					System.out.println("результат: " + in.intArrayToStr(tasklist.add(arr1, arr2, num1)));
 					break;
 				case 19:
@@ -209,6 +213,7 @@ class Main {
 					else{
 						System.out.println("Неизвестная команда");
 					}
+					break;
 			}
 		}
 	}

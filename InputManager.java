@@ -19,6 +19,7 @@ class InputManager{
         int len = inputInt();
         while(len < 0){
             System.out.print("Введите положительное число: ");
+            len = inputInt();
         }
         int[] arr = new int[len];
         System.out.print("Введите " + len + " числел: ");
